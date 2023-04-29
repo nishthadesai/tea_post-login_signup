@@ -1,5 +1,18 @@
 import 'package:flutter/material.dart';
 
+void main()
+{
+  runApp(Main());
+}
+
+class Main extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: SignUp(),
+    );
+  }
+}
 class SignUp extends StatelessWidget {
   SignUp({Key? key}) : super(key: key);
   final _formkey=GlobalKey<FormState>();
@@ -7,8 +20,8 @@ class SignUp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.yellow,
-      appBar: AppBar(title: Text('Signup',style: TextStyle(color:Colors.white,fontSize: 30,))),
+      backgroundColor: Colors.green,
+      appBar: AppBar(backgroundColor: Colors.black,title: Text('Signup',style: TextStyle(color:Colors.green,fontSize: 20,))),
       body: SingleChildScrollView(
         child: SafeArea(
           child: Center(
@@ -19,7 +32,7 @@ class SignUp extends StatelessWidget {
                   SizedBox(height: 20,),
                   CircleAvatar
                     (radius: 50.00,
-                      backgroundImage: AssetImage('assets/login.jfif')),
+                      backgroundImage: AssetImage('assets/logo.jfif')),
 
                   SizedBox(height: 1,),
 
