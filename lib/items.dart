@@ -580,7 +580,7 @@ class Item extends StatelessWidget {
                             Column(
                               children: [
                                 Image(
-                                  image: AssetImage('assets/pauva.png'),
+                                  image: AssetImage('assets/samosa.png'),
                                   height: 100,
                                   width: 100,
                                 ),
@@ -603,7 +603,7 @@ class Item extends StatelessWidget {
                               width: 5,
                             ),
                             Text(
-                              'Poha',
+                              'Poha*',
                               style: TextStyle(fontSize: 20),
                             ),
                             SizedBox(
@@ -627,14 +627,14 @@ class Item extends StatelessWidget {
                               width: 5,
                             ),
                             Text(
-                              'Maska Bun with Jam',
+                              'Samosa',
                               style: TextStyle(fontSize: 20),
                             ),
                             SizedBox(
                               width: 5,
                             ),
                             Text(
-                              '80/-',
+                              '70/-',
                               style: TextStyle(fontSize: 20),
                             ),
                           ],
@@ -1373,14 +1373,17 @@ class Item extends StatelessWidget {
                                 ),
                                 Text(
                                   '*Jain also availlable',
-                                  style: TextStyle(fontSize: 20),
+                                  style: TextStyle(fontSize: 22,color: Colors.white),
                                 ),
                                 SizedBox(
                                   width: 5,
                                 ),
                                 Text(
                                   'GST Extra',
-                                  style: TextStyle(fontSize: 20),
+                                  style: TextStyle(fontSize: 16,color: Colors.white),
+                                ),
+                                SizedBox(
+                                  height: 5,
                                 ),
                               ],
                             ),

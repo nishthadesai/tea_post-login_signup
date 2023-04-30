@@ -60,21 +60,21 @@ class Home extends StatelessWidget {
                   Column(
                     children: [
                       Image(
-                        image: AssetImage('assets/tea.png'),
+                        image: AssetImage('assets/samosa.png'),
                         height: 70,
                       ),
-                      Text('Tea'),
-                      Text('20/-'),
+                      Text('Samosa'),
+                      Text('70/-'),
                     ],
                   ),
                   Column(
                     children: [
                       Image(
-                        image: AssetImage('assets/samosa.png'),
+                        image: AssetImage('assets/sandwich.png'),
                         height: 70,
                       ),
-                      Text('Samosa(2)'),
-                      Text('70/-'),
+                      Text('Sandwich'),
+                      Text('140/-'),
                     ],
                   ),
                   Column(
