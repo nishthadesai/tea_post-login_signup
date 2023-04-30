@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
-void main()
-{
+void main() {
   runApp(Main());
 }
 
@@ -13,15 +12,22 @@ class Main extends StatelessWidget {
     );
   }
 }
+
 class SignUp extends StatelessWidget {
   SignUp({Key? key}) : super(key: key);
-  final _formkey=GlobalKey<FormState>();
+  final _formkey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.green,
-      appBar: AppBar(backgroundColor: Colors.black,title: Text('Signup',style: TextStyle(color:Colors.green,fontSize: 20,))),
+      appBar: AppBar(
+          backgroundColor: Colors.black,
+          title: Text('Signup',
+              style: TextStyle(
+                color: Colors.green,
+                fontSize: 20,
+              ))),
       body: SingleChildScrollView(
         child: SafeArea(
           child: Center(
@@ -29,115 +35,109 @@ class SignUp extends StatelessWidget {
               key: _formkey,
               child: Column(
                 children: [
-                  SizedBox(height: 20,),
-                  CircleAvatar
-                    (radius: 50.00,
+                  SizedBox(
+                    height: 20,
+                  ),
+                  CircleAvatar(
+                      radius: 50.00,
                       backgroundImage: AssetImage('assets/logo.jfif')),
-
-                  SizedBox(height: 1,),
-
-                  Container(margin: EdgeInsets.all(20),
-                      child: TextFormField( cursorColor: Colors.brown,
+                  SizedBox(
+                    height: 1,
+                  ),
+                  Container(
+                      margin: EdgeInsets.all(20),
+                      child: TextFormField(
+                        cursorColor: Colors.brown,
                         keyboardType: TextInputType.name,
-                        decoration: InputDecoration(labelText: "Name:",),
-                        validator: (val)
-                        {
-                          if(val!.isEmpty)
-                          {
+                        decoration: InputDecoration(
+                          labelText: "Name:",
+                        ),
+                        validator: (val) {
+                          if (val!.isEmpty) {
                             return "Please Fill This";
-                          }
-                          else if( !RegExp(r'^[[a-z A-Z]').hasMatch(val!))
-                          {
+                          } else if (!RegExp(r'^[[a-z A-Z]').hasMatch(val!)) {
                             return "Enter Proper Name";
-                          }
-                          else
-                          {
+                          } else {
                             return null;
                           }
                         },
-                      )
-                  ),
-
-                  Container(margin: EdgeInsets.all(20),
-                      child: TextFormField(cursorColor: Colors.brown,
+                      )),
+                  Container(
+                      margin: EdgeInsets.all(20),
+                      child: TextFormField(
+                        cursorColor: Colors.brown,
                         keyboardType: TextInputType.number,
-                        decoration: InputDecoration(labelText: "Number:",),
-                        validator: (val)
-                        {
-                          if(val!.isEmpty)
-                          {
+                        decoration: InputDecoration(
+                          labelText: "Number:",
+                        ),
+                        validator: (val) {
+                          if (val!.isEmpty) {
                             return "Please Fill This";
-                          }
-                          else if(!RegExp(r'^\s*(?:\+?(\d{1,3}))?[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d{4})(?: *x(\d+))?\s*$').hasMatch(val!))
-                          {
+                          } else if (!RegExp(
+                                  r'^\s*(?:\+?(\d{1,3}))?[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d{4})(?: *x(\d+))?\s*$')
+                              .hasMatch(val!)) {
                             return "Enter Number Properly";
-                          }
-                          else
-                          {
+                          } else {
                             return null;
                           }
                         },
-                      )
-                  ),
-
-                  Container(margin: EdgeInsets.all(20),
-                      child: TextFormField(cursorColor: Colors.brown,
+                      )),
+                  Container(
+                      margin: EdgeInsets.all(20),
+                      child: TextFormField(
+                        cursorColor: Colors.brown,
                         keyboardType: TextInputType.emailAddress,
-                        decoration: InputDecoration(labelText: "Email:",),
-                        validator: (val)
-                        {
-                          if(val!.isEmpty)
-                          {
+                        decoration: InputDecoration(
+                          labelText: "Email:",
+                        ),
+                        validator: (val) {
+                          if (val!.isEmpty) {
                             return "Please Fill This";
-                          }
-                          else if(!RegExp(r'^[\w]+@([\w]+\.)+[\w]{2,4}').hasMatch(val!))
-                          {
+                          } else if (!RegExp(r'^[\w]+@([\w]+\.)+[\w]{2,4}')
+                              .hasMatch(val!)) {
                             return "Enter correct Mail";
-                          }
-                          else
-                          {
+                          } else {
                             return null;
                           }
                         },
-                      )
-                  ),
-
-                  Container(margin: EdgeInsets.all(20),
-                      child: TextFormField(obscureText: true,cursorColor: Colors.brown,
+                      )),
+                  Container(
+                      margin: EdgeInsets.all(20),
+                      child: TextFormField(
+                        obscureText: true,
+                        cursorColor: Colors.brown,
                         keyboardType: TextInputType.visiblePassword,
-                        decoration: InputDecoration(labelText: "Password:",),
-                        validator: (val)
-                        {
-                          if(val!.isEmpty)
-                          {
+                        decoration: InputDecoration(
+                          labelText: "Password:",
+                        ),
+                        validator: (val) {
+                          if (val!.isEmpty) {
                             return "Plz Enter Password";
-                          }
-                          else
-                          {
+                          } else {
                             return null;
                           }
                         },
-                      )
+                      )),
+                  SizedBox(
+                    height: 1,
                   ),
-
-                  SizedBox(height: 1,),
-
                   Center(
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        ElevatedButton(style: ElevatedButton.styleFrom(primary: Colors.red),
+                        ElevatedButton(
+                          style: ElevatedButton.styleFrom(primary: Colors.red),
                           onPressed: () => {
-                            if(_formkey.currentState!.validate())
-                              {
-                                print("Submitted")
-                              }
+                            if (_formkey.currentState!.validate())
+                              {print("Submitted")}
                             else
-                              {
-                                print("Plz Enter valid Details")
-                              }
-                          }, child: Text('Signup'),),
-                        SizedBox(width: 5,),
+                              {print("Plz Enter valid Details")}
+                          },
+                          child: Text('Signup'),
+                        ),
+                        SizedBox(
+                          width: 5,
+                        ),
                       ],
                     ),
                   ),

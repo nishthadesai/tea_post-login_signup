@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:login_signup/items.dart';
 
 class Home extends StatelessWidget {
   Home({Key? key}) : super(key: key);
@@ -20,80 +21,99 @@ class Home extends StatelessWidget {
           child: Column(
             children: [
               Center(
-                  child: Text(
-                'Welcome to Teapost',
-                style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 30,
+                child: Image(
+                  image: AssetImage('assets/lj.png'),
+                  height: 70,
+                  width: 200,
                 ),
-                textAlign: TextAlign.center,
-              )),
+              ),
               SizedBox(
                 height: 15,
               ),
-              Text('Menu',
+              Text('Welcome to TeaPost of LJ',
                   style: TextStyle(
                     color: Colors.black,
                     fontSize: 25,
                   )),
               Image(
-                image: AssetImage('assets/menu.jfif'),
+                image: AssetImage('assets/menu.png'),
                 height: 300,
               ),
-        Center(
-          child: Text(
-            'Some popular Outlets',
-            style: TextStyle(
-              color: Colors.black,
-              fontSize: 30,
-            ),),
-        ),
-              SizedBox(height: 25,),
+              SizedBox(
+                height: 20,
+              ),
+              Center(
+                child: Text(
+                  'Some popular Outlets',
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 30,
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 25,
+              ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Column(
                     children: [
                       Image(
-                        image: AssetImage('assets/thepla.jfif'),
+                        image: AssetImage('assets/tea.png'),
                         height: 70,
                       ),
-                      Text('Thepla'),
-                      Text('40/-'),
+                      Text('Tea'),
+                      Text('20/-'),
                     ],
                   ),
                   Column(
                     children: [
                       Image(
-                        image: AssetImage('assets/samosa.jfif'),
+                        image: AssetImage('assets/samosa.png'),
                         height: 70,
                       ),
                       Text('Samosa(2)'),
-                      Text('60/-'),
+                      Text('70/-'),
                     ],
                   ),
                   Column(
                     children: [
                       Image(
-                        image: AssetImage('assets/noodles.jfif'),
+                        image: AssetImage('assets/noodles.png'),
                         height: 70,
                       ),
                       Text('Noodles'),
-                      Text('90/-'),
+                      Text('110/-'),
                     ],
                   ),
                   Column(
                     children: [
                       Image(
-                        image: AssetImage('assets/puff.jfif'),
+                        image: AssetImage('assets/puff.png'),
                         height: 70,
                       ),
-                      Text('Puff'),
-                      Text('25/-'),
+                      Text('Puff(2)'),
+                      Text('50/-'),
                     ],
                   ),
                 ],
               ),
+              SizedBox(
+                height: 20,
+              ),
+              InkWell(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => Item()),
+                    );
+                  },
+                  child: Text(
+                    'Explore Items =>',
+                    style: TextStyle(color: Colors.white, fontSize: 20),
+                    textAlign: TextAlign.end,
+                  )),
             ],
           ),
         ),

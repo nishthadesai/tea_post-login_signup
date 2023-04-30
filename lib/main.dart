@@ -38,7 +38,9 @@ class MyApp extends StatelessWidget {
               key: _formkey,
               child: Column(
                 children: [
-                  SizedBox(height: 30,),
+                  SizedBox(
+                    height: 30,
+                  ),
                   CircleAvatar(
                       radius: 50.00,
                       backgroundImage: AssetImage('assets/logo.jfif')),
